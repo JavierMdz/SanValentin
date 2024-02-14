@@ -320,7 +320,7 @@ function calcularTiempoTranscurrido() {
   diferencia %= 1000 * 60;
   let segundos = Math.floor(diferencia / 1000);
 
-  document.getElementById("tiempoTranscurrido").innerText = `Han pasado ${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos desde que te conocí♡`;
+  document.getElementById("tiempoTranscurrido").innerText = `Han pasado ${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos desde que nos conocimos♡`;
 }
 calcularTiempoTranscurrido();
 setInterval(calcularTiempoTranscurrido, 1000);
