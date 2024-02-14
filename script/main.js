@@ -4,6 +4,7 @@ const animationTimeline = () => {
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
 
+  
   textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
     .split("")
     .join("</span><span>")}</span`;
@@ -31,11 +32,11 @@ const animationTimeline = () => {
   tl.to(".container", 0.1, {
     visibility: "visible",
   })
-    .from(".one", 0.7, {
+    .from(".one", 1.0, {
       opacity: 0,
       y: 10,
     })
-    .from(".two", 0.4, {
+    .from(".two", 1.0, {
       opacity: 0,
       y: 10,
     })
@@ -303,3 +304,40 @@ const resolveFetch = () => {
 };
 
 resolveFetch().then(animationTimeline());
+
+function calcularTiempoTranscurrido() {
+  // Fecha de referencia: 12 de septiembre de 2023
+  const fechaInicio = new Date("2023-09-13");
+  const ahora = new Date();
+
+  let diferencia = ahora - fechaInicio;
+
+  let dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+  diferencia %= 1000 * 60 * 60 * 24;
+  let horas = Math.floor(diferencia / (1000 * 60 * 60));
+  diferencia %= 1000 * 60 * 60;
+  let minutos = Math.floor(diferencia / (1000 * 60));
+  diferencia %= 1000 * 60;
+  let segundos = Math.floor(diferencia / 1000);
+
+  document.getElementById("tiempoTranscurrido").innerText = `Han pasado ${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos desde que te conocí♡`;
+}
+calcularTiempoTranscurrido();
+setInterval(calcularTiempoTranscurrido, 1000);
+
+function changeTextColor() {
+  const teamoElement = document.getElementById('teamoText');
+  const colors = ['#ffccdd', '#ffb6c1', '#d8bfd8w']; // Lista de colores
+  let index = 0;
+
+  // Función para cambiar el color del texto
+  function updateColor() {
+    teamoElement.style.color = colors[index];
+    index = (index + 1) % colors.length; // Avanzar al siguiente color en la lista
+  }
+
+  setInterval(updateColor, 300); // Cambiar el color cada segundo (1000 milisegundos)
+}
+
+// Llamar a la función para iniciar el cambio de color
+changeTextColor();
