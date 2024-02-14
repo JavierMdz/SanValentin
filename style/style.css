@@ -112,9 +112,6 @@ body {
   display: inline-block;
 }
 
-.idea-6 span {
-  font-size: 15rem;
-}
 
 .six {
   position: relative;
@@ -216,7 +213,7 @@ body {
 }
 
 .wish-hbd {
-  font-size: 3em;
+  font-size: 2.5em;
   margin: 0;
   /* text-transform: uppercase; */
 }
@@ -275,7 +272,7 @@ body {
   }
 
   .idea-6 span {
-    font-size: 10rem;
+    font-size: 8rem;
   }
 
   .six .hat {
@@ -284,11 +281,11 @@ body {
   }
 
   .wish-hbd {
-    font-size: 2.3em;
+    font-size: 2em;
   }
 
   .wish h5 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
 
